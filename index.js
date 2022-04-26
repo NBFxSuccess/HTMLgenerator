@@ -1,65 +1,56 @@
-const inquirer = require('inquirer');
 const fs = require('fs');
-let badge;
+const inquirer = require('inquirer');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
+let EmployeeList = [];
 inquirer
   .prompt([
     {
       type: 'input',
-      message: 'Title of project:',
-      name: 'title',
+      message: 'What is the Project Managers name?',
+      name: 'name',
     },
     {
         type: 'input',
-        message: 'Github username:',
-        name: 'githubusername',
+        message: 'Their ID:',
+        name: 'id',
     },
     {
         type: 'input',
-        message: 'Your email:',
+        message: 'Their email:',
         name: 'email',
     },
     {
       type: 'input',
-      message: 'Description of the project:',
-      name: 'description',
+      message: 'What is their office number?',
+      name: 'officeNumber',
     },
     {
-        type: 'input',
-        message: 'Neccessary depenency commands:',
-        name: 'instructions',
+        type: 'confirm',
+        message: 'Do you wish to add another team member?',
+        name: 'addPerson',
     },
-    {
-        type: 'input',
-        message: 'What are the usage instructions?',
-        name: 'usage',
-    },
-    {
-        type: 'input',
-        message: 'Contribution guidelines:',
-        name: 'contributingInfo',
-    },
-      {
-        type: 'input',
-        message: 'Which command should be used to run tests?',
-        name: 'testcommand',
-      },
-      {
-        type: 'list',
-        message: 'Which license do you want to put on this project?',
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3'],
-        name: 'license',
-      },
-      
   ])
-  .then((response) =>
+  .then((manager) =>
   {
-      const {title, githubusername, email, description, instructions, usage, contributingInfo, testcommand, license} = response;
-     
-      console.log(license)
-    fs.writeFile('README2.md', ``, (error) => 
-{
- if (error)
-    console.error(error)
-})
+      const {name, id, email, officeNumber, addPerson} = manager;
+
+      EmployeeList.push(new Manager(name, id, email, officeNumber));
+      
+  console.log(EmployeeList)
+
+  if (addPerson === true) {
+    addIntern();
+} 
+else {
+    writeTheStuff();
+}
+
   });
+
+
+  function writeTheStuff () {
+
+  }
