@@ -31,7 +31,9 @@ npm i
 
 
 ## Usage
-VIDEO LINK HERE
+https://user-images.githubusercontent.com/98627133/165445502-08393345-8988-4a16-9ea6-201278216891.mov
+
+
 
 
 ## License
