@@ -118,7 +118,7 @@ if (employeeType === 'Engineer') {
         <li class="list-group-item">Name: ${engineer.name}</li>
         <li class="list-group-item">ID: ${engineer.id}</li>
         <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-        <li class="list-group-item">Github: ${engineer.github}</li>
+        <li class="list-group-item">Github: <a target="_blank" href="https://github.com/${engineer.github}">${engineer.github}</a></li>
       </ul>
     </div>`
 
