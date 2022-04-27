@@ -20,25 +20,36 @@ describe('Employee', () => {
     });
 
     describe('getName', () => {
-        it('should get the values of the name when called', () => {
-
+        it('should return Nick when called', () => {
+      let name = "Nick";
+      let employee = new Employee(name)
+      expect(employee.getName()).toEqual("Nick")
             
     });
 
     })
 
     describe('getId', () => {
-        it('should', () => {
-
+        it('should return 1 when called', () => {
+           // Arrange
+           let name = 'Nick'
+           let id = 1;
+           let email = 'Nick@gmail.com'
+           let employee = new Employee(name, id, email)
+           expect(employee.getId()).toEqual(1)
             
         });
         
     })
 
     describe('getEmail', () => {
-        it('should', () => {
+        it('should return Nick@gmail.com when called', () => {
 
-            
+            let name = 'Nick'
+            let id = 1;
+            let email = 'Nick@gmail.com'
+            let employee = new Employee(name, id, email)
+            expect(employee.getEmail()).toEqual("Nick@gmail.com")
         });
         
     })
@@ -46,9 +57,9 @@ describe('Employee', () => {
     describe('getRole', () => {
         it('should return Employee when getRole is called', () => {
                //Arrange
-           let name = 'Reniel'
+           let name = 'Nick'
            let id = 1;
-           let email = 'Reniel@gmail.com'
+           let email = 'Nick@gmail.com'
            let employee = new Employee(name, id, email)
            //Action
           let role = employee.getRole()
